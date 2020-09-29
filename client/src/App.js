@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
 
-export default function App () {
+const App = () => {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
@@ -34,3 +34,4 @@ export default function App () {
     </div>
   );
 }
+export default App
