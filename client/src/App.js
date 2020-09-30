@@ -18,7 +18,7 @@ const App = () => {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
           // console.log("Movie List -->" , response)
-          console.log("response" , response)
+          // console.log("response" , response)
           return setMovieList(response.data)
         })
         .catch(error => {
@@ -34,14 +34,12 @@ const App = () => {
 
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
+      <SavedList list={[ /* This is stretch */]} movies={movieList}/>
       <Switch>
-        <Route path='./movies/:movieId'>
+        <Route path='/movies/:id'>
           <Movie />
         </Route>
-        <Route path='/'>
-          <MovieList movies={movieList} />
-        </Route>
+        <Route path='/' render={(props) => <MovieList  movies={movieList} />} />
       </Switch>
       
     </div>
